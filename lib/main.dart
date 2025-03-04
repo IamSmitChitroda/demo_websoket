@@ -1,10 +1,5 @@
-import 'dart:convert';
 import 'package:demo_websoket/pages/home_page.dart';
-import 'package:demo_websoket/websocket_modal.dart';
 import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
-import 'package:web_socket_channel/io.dart';
-import 'package:web_socket_channel/web_socket_channel.dart';
 
 void main() {
   runApp(const MyApp());

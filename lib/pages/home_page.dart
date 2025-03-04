@@ -1,5 +1,5 @@
 import 'package:demo_websoket/services/web_socket_service.dart';
-import 'package:demo_websoket/websocket_modal.dart';
+import 'package:demo_websoket/modal/websocket_modal.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
