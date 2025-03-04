@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:demo_websoket/websocket_modal.dart';
+import 'package:demo_websoket/websoket_common.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:web_socket_channel/io.dart';
@@ -38,18 +39,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final IOWebSocketChannel channel = IOWebSocketChannel.connect(
-    "wss://stream.binance.com:9443/ws/btcusdt@trade",
-  );
-
   WebSocketModal? webSocket;
 
   void streamListener() {
-    channel.stream.listen(
+    WebsocketCommon.instance.channel.stream.listen(
       (event) {
-        setState(() {
-          webSocket = WebSocketModal.fromJson(jsonDecode(event));
-        });
+        setState(
+          () {
+            webSocket = WebSocketModal.fromJson(jsonDecode(event));
+          },
+        );
       },
     );
   }
